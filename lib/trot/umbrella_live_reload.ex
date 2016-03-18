@@ -24,13 +24,11 @@ defmodule Trot.UmbrellaLiveReload do
   Recompiles any modules that have changed.
   """
   #def reload, do: Mix.Tasks.Compile.Elixir.run([])
-
-
-  def reload() do
-    #Enum.each(['kv','kv_server','http_server'], &Mix.Task.reenable("compile.elixir", app: &1))
+  def reload do
     Mix.Task.reenable("compile.elixir")
     Mix.Task.run "compile.elixir"
   end
+
 
   defp check_reload(:ok, conn) do
     location = "/" <> Enum.join(conn.path_info, "/")
