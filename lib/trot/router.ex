@@ -41,7 +41,7 @@ defmodule Trot.Router do
 
       # Determine which plugs to run before and after routing requests
       default_pre_routing = [
-        "Elixir.Trot.LiveReload": [env: Mix.env],
+        "Elixir.Trot.UmbrellaLiveReload": [env: Mix.env],
         "Elixir.Plug.Logger": [],
         "Elixir.PlugHeartbeat": [path: Application.get_env(:trot, :heartbeat, "/heartbeat")],
       ]
